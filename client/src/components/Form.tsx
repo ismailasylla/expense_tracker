@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import TransactionList from "./TransactionList";
 
 const Form = () => {
   const { register, handleSubmit, resetField } = useForm();
@@ -42,6 +43,7 @@ const Form = () => {
           </div>
         </div>
       </form>
+      <TransactionList></TransactionList>
     </div>
   );
 };
