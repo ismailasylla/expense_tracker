@@ -1,4 +1,5 @@
 import "./App.css";
+import ExpenseGraph from "./components/ExpenseGraph";
 import Form from "./components/Form";
 
 function App() {
@@ -12,9 +13,10 @@ function App() {
         {/* grid columns */}
         <div className="grid md:grid-cols-2 gap-4">
           {/* Expense */}
-          Total Expenses
+
+          <ExpenseGraph />
           {/* Form */}
-          <Form></Form>
+          <Form />
         </div>
       </div>
     </div>

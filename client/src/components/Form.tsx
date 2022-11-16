@@ -1,11 +1,17 @@
-import { useForm } from "react-hook-form";
+// @ts-nocheck
 import TransactionList from "./TransactionList";
+import { useForm } from "react-hook-form";
+import { default as api } from "../features/apiSlice";
 
 const Form = () => {
   const { register, handleSubmit, resetField } = useForm();
+  const [addTransaction] = api.useAddTransactionMutation();
 
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    if (!data) return {};
+    await addTransaction(data).unwrap();
+    resetField("name");
+    resetField("amount");
   };
 
   return (
@@ -22,9 +28,9 @@ const Form = () => {
               className="form-input"
             />
           </div>
+
           <select className="form-input" {...register("type")}>
-            {/* <option value="Investment" defaultValue> */}
-            <option value="Investment">Investment</option>
+            <option value="Investment" defaultValue></option>
             <option value="Expense">Expense</option>
             <option value="Savings">Savings</option>
           </select>
