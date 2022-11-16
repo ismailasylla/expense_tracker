@@ -4,7 +4,12 @@ import { useForm } from "react-hook-form";
 import { default as api } from "../features/apiSlice";
 
 const Form = () => {
-  const { register, handleSubmit, resetField } = useForm();
+  const {
+    register,
+    handleSubmit,
+    resetField,
+    formState: { errors },
+  } = useForm();
   const [addTransaction] = api.useAddTransactionMutation();
 
   const onSubmit = async (data) => {
@@ -23,13 +28,20 @@ const Form = () => {
           <div className="input-group">
             <input
               type="text"
-              {...register("name")}
+              {...register("name", { required: true })}
               placeholder="Sallary, House Rend, SIP"
               className="form-input"
             />
           </div>
+          <span className="text-red-700 px-4 py-3">
+            {errors.name?.type === "required" &&
+              "Please enter the type of expense"}
+          </span>
 
-          <select className="form-input" {...register("type")}>
+          <select
+            className="form-input"
+            {...register("type", { required: true })}
+          >
             <option value="Expense" defaultValue>
               Expense
             </option>
@@ -38,12 +50,15 @@ const Form = () => {
           </select>
           <div className="input-group">
             <input
-              type="text"
-              {...register("amount")}
+              type="number"
+              {...register("amount", { required: true })}
               placeholder="Amount"
               className="form-input"
             />
           </div>
+          <span className="text-red-700 px-4 py-3">
+            {errors.amount?.type === "required" && " Please enter the Amount"}
+          </span>
           <div className="submit-btn">
             <button className="border py-2 text-white bg-slate-800 w-full">
               Make Transaction
