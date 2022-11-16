@@ -12,14 +12,14 @@ app.use(express.json());
 // mongodb connection
 const con = require("./db/connection.js");
 
-// using routes
+// routes
 app.use(require("./routes/route"));
 
 con
   .then((db) => {
     if (!db) return process.exit(1);
 
-    // listen to the http server
+    // listen to server
     app.listen(port, () => {
       console.log(`Server is running on port: http://localhost:${port}`);
     });
@@ -27,7 +27,7 @@ con
     app.on("error", (err) =>
       console.log(`Failed To Connect with HTTP Server : ${err}`)
     );
-    // error in mondb connection
+    // Catch error connection
   })
   .catch((error) => {
     console.log(`Connection Failed...! ${error}`);
