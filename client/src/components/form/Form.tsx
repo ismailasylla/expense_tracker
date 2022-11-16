@@ -26,6 +26,7 @@ const Form = () => {
       <form id="form" onSubmit={handleSubmit(onSubmit)}>
         <div className="grid gap-4">
           <div className="input-group">
+            <label htmlFor="transaction">Transaction Type</label>
             <input
               type="text"
               {...register("name", { required: true })}
@@ -38,7 +39,7 @@ const Form = () => {
             {errors.name?.type === "required" &&
               "Please enter the type of expense"}
           </span>
-
+          <label htmlFor="transaction">Type Of Expense</label>
           <select
             className="form-input"
             {...register("type", { required: true })}
@@ -50,6 +51,7 @@ const Form = () => {
             <option value="Savings">Savings</option>
           </select>
           <div className="input-group">
+            <label htmlFor="transaction">Transaction Amount</label>
             <input
               type="number"
               {...register("amount", { required: true })}
