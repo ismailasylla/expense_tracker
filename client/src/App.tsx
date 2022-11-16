@@ -1,6 +1,6 @@
 import "./App.css";
 import ExpenseGraph from "./components/ExpenseGraph";
-import Form from "./components/Form";
+import Form from "./components/form/Form";
 
 function App() {
   return (
