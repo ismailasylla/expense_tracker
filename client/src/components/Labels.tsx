@@ -1,10 +1,12 @@
 // @ts-nocheck
-import { default as api } from "../features/apiSlice";
 import { getLabels } from "../helper/helper";
+import { default as api } from "../features/apiSlice";
 
 const Labels = () => {
   const { data, isFetching, isSuccess, isError } = api.useGetLabelsQuery();
   let Transactions;
+
+  console.log(data);
 
   if (isFetching) {
     Transactions = <div>Fetching</div>;

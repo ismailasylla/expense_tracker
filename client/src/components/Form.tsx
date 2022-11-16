@@ -30,8 +30,10 @@ const Form = () => {
           </div>
 
           <select className="form-input" {...register("type")}>
-            <option value="Investment" defaultValue></option>
-            <option value="Expense">Expense</option>
+            <option value="Expense" defaultValue>
+              Expense
+            </option>
+            <option value="Investment">Investment</option>
             <option value="Savings">Savings</option>
           </select>
           <div className="input-group">
@@ -43,7 +45,7 @@ const Form = () => {
             />
           </div>
           <div className="submit-btn">
-            <button className="border py-2 text-white bg-indigo-500 w-full">
+            <button className="border py-2 text-white bg-slate-800 w-full">
               Make Transaction
             </button>
           </div>
