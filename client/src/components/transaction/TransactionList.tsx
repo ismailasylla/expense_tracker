@@ -1,6 +1,6 @@
 // @ts-nocheck
 import Transaction from "./Transaction";
-import { default as api } from "../features/apiSlice";
+import { default as api } from "../../features/apiSlice";
 
 const TransactionList = () => {
   const { data, isFetching, isSuccess, isError } = api.useGetLabelsQuery();
@@ -19,7 +19,7 @@ const TransactionList = () => {
       <Transaction key={i} category={v} handler={handlerClick}></Transaction>
     ));
   } else if (isError) {
-    Transactions = <div>Error</div>;
+    Transactions = <div>There was a problem fetching the data</div>;
   }
 
   return (

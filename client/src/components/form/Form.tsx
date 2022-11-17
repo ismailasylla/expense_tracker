@@ -1,7 +1,8 @@
 // @ts-nocheck
-import TransactionList from "../TransactionList";
+
 import { useForm } from "react-hook-form";
 import { default as api } from "../../features/apiSlice";
+import TransactionList from "../transaction/TransactionList";
 
 const Form = () => {
   const {
@@ -22,7 +23,6 @@ const Form = () => {
   return (
     <div className="form max-w-sm mx-auto w-96">
       <h1 className="font-bold pb-4 text-xl">Transaction</h1>
-
       <form id="form" onSubmit={handleSubmit(onSubmit)}>
         <div className="grid gap-4">
           <div className="input-group">
@@ -30,7 +30,7 @@ const Form = () => {
             <input
               type="text"
               {...register("name", { required: true })}
-              placeholder="Sallary, House Rend, SIP"
+              placeholder="Salary, House Rend, SIP"
               className="form-input"
               id="Transaction"
             />
@@ -55,7 +55,7 @@ const Form = () => {
             <input
               type="number"
               {...register("amount", { required: true })}
-              placeholder="Amount"
+              placeholder="amount"
               className="form-input"
               id="Amount"
             />
