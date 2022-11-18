@@ -39,7 +39,7 @@ const Form = () => {
             {errors.name?.type === "required" &&
               "Please enter the type of expense"}
           </span>
-          <label htmlFor="transaction">Type Of Expense</label>
+          <label htmlFor="transaction">Type Of Transaction</label>
           <select
             className="form-input"
             {...register("type", { required: true })}
@@ -47,6 +47,7 @@ const Form = () => {
             <option value="Expense" defaultValue>
               Expense
             </option>
+            <option value="Income">Income</option>
             <option value="Investment">Investment</option>
             <option value="Savings">Savings</option>
           </select>

@@ -3,8 +3,8 @@ const model = require("../models/model");
 //  post: http://localhost:8080/api/categories
 async function create_Categories(req, res) {
   const Create = new model.Categories({
-    type: "Savings",
-    color: "#1F3B5C",
+    type: "Income",
+    color: "#008080",
   });
 
   await Create.save(function (err) {
