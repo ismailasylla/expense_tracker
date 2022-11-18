@@ -2,6 +2,8 @@
 
 import { useForm } from "react-hook-form";
 import { default as api } from "../../features/apiSlice";
+import TransactionButton from "../button/TransactionButton";
+import FormLabel from "../heading/FormLabel/FromLabel";
 import TransactionList from "../transaction/TransactionList";
 
 const Form = () => {
@@ -26,7 +28,7 @@ const Form = () => {
       <form id="form" onSubmit={handleSubmit(onSubmit)}>
         <div className="grid gap-4">
           <div className="input-group">
-            <label htmlFor="transaction">Transaction Type</label>
+            <FormLabel title={"Transaction Type"} />
             <input
               type="text"
               {...register("name", { required: true })}
@@ -39,7 +41,7 @@ const Form = () => {
             {errors.name?.type === "required" &&
               "Please enter the type of expense"}
           </span>
-          <label htmlFor="transaction">Type Of Transaction</label>
+          <FormLabel title={"Type Of Transaction"} />
           <select
             className="form-input"
             {...register("type", { required: true })}
@@ -52,7 +54,7 @@ const Form = () => {
             <option value="Savings">Savings</option>
           </select>
           <div className="input-group">
-            <label htmlFor="transaction">Transaction Amount</label>
+            <FormLabel title={"Transaction Amount"} />
             <input
               type="number"
               {...register("amount", { required: true })}
@@ -64,11 +66,7 @@ const Form = () => {
           <span className="text-red-700 px-4 py-3">
             {errors.amount?.type === "required" && "Please enter the Amount"}
           </span>
-          <div className="submit-btn">
-            <button className="border py-2 text-white bg-slate-800 w-full">
-              Make Transaction
-            </button>
-          </div>
+          <TransactionButton />
         </div>
       </form>
       <TransactionList></TransactionList>
