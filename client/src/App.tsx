@@ -1,7 +1,6 @@
 import "./App.css";
-import ExpenseGraph from "./components/ExpenseGraph";
-import Form from "./components/form/Form";
-import MainHeading from "./components/heading/MainHeading/MainHeading";
+import { TransactionGraph, TransactonForm } from "./components";
+import { MainHeading } from "./components/heading";
 
 function App() {
   return (
@@ -9,8 +8,8 @@ function App() {
       <div className="container mx-auto max-w-6xl text-center drop-shadow-lg text-gray-800">
         <MainHeading title={"Expense Tracker"} />
         <div className="grid md:grid-cols-2 gap-4">
-          <ExpenseGraph />
-          <Form />
+          <TransactionGraph />
+          <TransactonForm />
         </div>
       </div>
     </div>

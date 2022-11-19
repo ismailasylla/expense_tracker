@@ -1,6 +1,7 @@
 // @ts-nocheck
-import Transaction from "./Transaction";
+
 import { default as api } from "../../features/apiSlice";
+import Transaction from "./Transaction";
 
 const TransactionList = () => {
   const { data, isFetching, isSuccess, isError } = api.useGetLabelsQuery();

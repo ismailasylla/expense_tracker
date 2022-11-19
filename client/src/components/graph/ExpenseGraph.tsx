@@ -1,7 +1,7 @@
 // @ts-nocheck
-import { chart_Data, getTotal } from "../helper/helper";
-import { default as api } from "../features/apiSlice";
-import Labels from "./transactionLabels/Labels";
+import { chart_Data, getTotal } from "../../helper/helper";
+import { default as api } from "../../features/apiSlice";
+import Labels from "../transactionLabels/Labels";
 import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
 
