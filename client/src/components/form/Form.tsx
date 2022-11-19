@@ -3,8 +3,9 @@
 import { useForm } from "react-hook-form";
 import { default as api } from "../../features/apiSlice";
 import TransactionButton from "../button/TransactionButton";
-import FormLabel from "../heading/FormLabel/FromLabel";
+import { FormLabel } from "../heading";
 import TransactionList from "../transaction/TransactionList";
+
 
 const Form = () => {
   const {
