@@ -2,6 +2,18 @@
 import { getLabels } from "../../helper/helper";
 import { default as api } from "../../features/apiSlice";
 
+interface TranctionLabelProps {
+  _id: string;
+  amount: number;
+  color: string;
+  name: string;
+  type: string;
+}
+
+interface TransationProps {
+  data: TranctionLabelProps;
+}
+
 const Labels = () => {
   const { data, isFetching, isSuccess, isError } = api.useGetLabelsQuery();
   let Transactions;
@@ -21,7 +33,7 @@ const Labels = () => {
   return <>{Transactions}</>;
 };
 
-function LabelComponent({ data }) {
+function LabelComponent({ data }: TransationProps) {
   if (!data) return <></>;
   return (
     <div className="labels flex justify-between">

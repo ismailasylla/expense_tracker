@@ -1,7 +1,13 @@
 // @ts-nocheck
 import "boxicons";
 
-const Transaction = ({ category, handler }) => {
+interface CategoryProps {
+  _id: number;
+  color: string;
+  name: string;
+}
+
+const Transaction = ({ category, handler }: CategoryProps) => {
   if (!category) return null;
 
   return (
